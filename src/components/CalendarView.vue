@@ -256,7 +256,7 @@ function goToCurrentMonth() {
 .calendar-view {
   background-color: white;
   border-radius: 8px;
-  padding: 20px;
+  padding: clamp(10px, 3vw, 20px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -264,12 +264,14 @@ function goToCurrentMonth() {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  gap: 8px;
 }
 
 .calendar-header h3 {
   margin: 0 15px;
   flex-grow: 1;
   text-align: center;
+  font-size: clamp(14px, 4vw, 18px);
 }
 
 .nav-button,
@@ -277,9 +279,10 @@ function goToCurrentMonth() {
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px 10px;
+  padding: clamp(4px, 2vw, 10px);
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
+  min-width: 32px;
 }
 
 .nav-button:hover,
@@ -308,20 +311,21 @@ function goToCurrentMonth() {
   text-align: center;
   font-weight: bold;
   color: #555;
-  padding: 5px;
+  font-size: clamp(12px, 3vw, 14px);
+  padding: clamp(2px, 1vw, 5px);
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: clamp(2px, 1vw, 5px);
 }
 
 .calendar-cell {
   aspect-ratio: 1;
   border: 1px solid #eee;
   border-radius: 4px;
-  padding: 5px;
+  padding: clamp(2px, 1vw, 5px);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
@@ -339,13 +343,13 @@ function goToCurrentMonth() {
 }
 
 .day-number {
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
+  margin-bottom: clamp(2px, 1vw, 5px);
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 .day-value {
-  font-size: 12px;
+  font-size: clamp(10px, 2.5vw, 12px);
   overflow-wrap: break-word;
   word-break: break-all;
   word-wrap: break-word;
@@ -359,12 +363,13 @@ function goToCurrentMonth() {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  gap: 20px;
+  gap: 10px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 .color-box {
@@ -372,5 +377,18 @@ function goToCurrentMonth() {
   height: 20px;
   border-radius: 4px;
   margin-right: 5px;
+}
+@media (max-width: 480px) {
+  .calendar-header {
+    margin-bottom: 10px;
+  }
+  
+  .today-button {
+    padding: 4px 8px;
+  }
+  
+  .color-legend {
+    justify-content: space-around;
+  }
 }
 </style>
