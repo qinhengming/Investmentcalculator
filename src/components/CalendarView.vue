@@ -349,7 +349,7 @@ function goToCurrentMonth() {
 }
 
 .day-value {
-  font-size: clamp(10px, 2.5vw, 12px);
+  font-size: clamp(8px, 2vw, 12px);
   overflow-wrap: break-word;
   word-break: break-all;
   word-wrap: break-word;
